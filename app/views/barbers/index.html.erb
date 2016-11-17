@@ -2,3 +2,29 @@
 
 <h1>INDEX</h1>
 
+
+<h1>All Cars</h1> 
+
+<table>
+  <thead>
+    <tr>
+      <th>Barber</th>
+      <th>Barbershop</th>
+    </tr>
+  </thead>
+
+  <% @barber.each do |barber| %>
+  <tr>
+    <td><%= barber.name %></td>
+    <td><%= barber.shop %></td>
+    <td>
+      <%= link_to 'View', barber_path(barber.id) %>
+      <%= link_to 'Edit', edit_barber_path(barber.id) %>
+      <%= link_to 'Delete', barber, :method => 'delete' %>
+    </td>
+  </tr>
+
+  <% end %>
+</table>
+
+<p><%= link_to 'New Barber', new_barber_path %></p>
