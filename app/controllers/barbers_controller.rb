@@ -27,7 +27,7 @@ class BarbersController < ApplicationController
     @barber = Barber.new(barber_params)
 
     if @barber.shop
-      @barber.shop = @barber.shop.to_i
+      @barber.shop = @barber.shop
     end
 
     if @barber.save
