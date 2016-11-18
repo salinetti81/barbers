@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'barbers#index'
   resources :barbers
+  post '/search' => 'barbers#search'
   
 end
 

@@ -5,6 +5,15 @@ class BarbersController < ApplicationController
     @barber = Barber.all
   end
 
+  # Searches Yelp API
+  def search
+    parameters = { term: params[:term], limit: 16 }
+    render json: Yelp.client.search(‘San Francisco’, parameters)
+    puts "=========="
+    p "akjfdafs"
+    puts "========="
+  end
+
   def show
   end
 
